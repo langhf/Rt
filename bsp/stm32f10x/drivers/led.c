@@ -26,12 +26,12 @@
 
 #else
 
-#define led1_rcc                    RCC_APB2Periph_GPIOE
-#define led1_gpio                   GPIOE
-#define led1_pin                    (GPIO_Pin_2)
+#define led1_rcc                    RCC_APB2Periph_GPIOC
+#define led1_gpio                   GPIOC
+#define led1_pin                    (GPIO_Pin_13)
 
-#define led2_rcc                    RCC_APB2Periph_GPIOE
-#define led2_gpio                   GPIOE
+#define led2_rcc                    RCC_APB2Periph_GPIOC
+#define led2_gpio                   GPIOC
 #define led2_pin                    (GPIO_Pin_3)
 
 #endif // led define #ifdef STM32_SIMULATOR
@@ -128,4 +128,3 @@ void led(rt_uint32_t led, rt_uint32_t value)
 }
 FINSH_FUNCTION_EXPORT(led, set led[0 - 1] on[1] or off[0].)
 #endif
-

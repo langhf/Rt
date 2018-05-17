@@ -13,7 +13,7 @@
 /* RT_THREAD_PRIORITY_256 is not set */
 #define RT_THREAD_PRIORITY_MAX 32
 #define RT_TICK_PER_SECOND 100
-#define RT_DEBUG
+// #define RT_DEBUG
 #define RT_USING_OVERFLOW_CHECK
 #define RT_DEBUG_INIT 0
 #define RT_DEBUG_THREAD 0
@@ -54,7 +54,7 @@
 
 /* RT-Thread Components */
 
-#define RT_USING_COMPONENTS_INIT
+// #define RT_USING_COMPONENTS_INIT
 /* RT_USING_USER_MAIN is not set */
 
 /* C++ features */
@@ -63,7 +63,7 @@
 
 /* Command shell */
 
-#define RT_USING_FINSH
+// #define RT_USING_FINSH
 #define FINSH_THREAD_NAME "tshell"
 #define FINSH_USING_HISTORY
 #define FINSH_HISTORY_LINES 5

@@ -37,6 +37,7 @@
 #endif
 
 #include "led.h"
+#include "test.h"
 
 ALIGN(RT_ALIGN_SIZE)
 static rt_uint8_t led_stack[ 512 ];
@@ -89,7 +90,7 @@ void rt_init_thread_entry(void* parameter)
     /* initialization RT-Thread Components */
     rt_components_init();
 #endif
-
+    demo_thread_create();
     /* Filesystem Initialization */
 #if defined(RT_USING_DFS) && defined(RT_USING_DFS_ELMFAT)
     /* mount sd card fat partition 1 as root directory */
@@ -139,18 +140,18 @@ int rt_application_init(void)
     rt_err_t result;
 
     /* init led thread */
-    result = rt_thread_init(&led_thread,
-                            "led",
-                            led_thread_entry,
-                            RT_NULL,
-                            (rt_uint8_t*)&led_stack[0],
-                            sizeof(led_stack),
-                            20,
-                            5);
-    if (result == RT_EOK)
-    {
-        rt_thread_startup(&led_thread);
-    }
+    // result = rt_thread_init(&led_thread,
+    //                         "led",
+    //                         led_thread_entry,
+    //                         RT_NULL,
+    //                         (rt_uint8_t*)&led_stack[0],
+    //                         sizeof(led_stack),
+    //                         20,
+    //                         5);
+    // if (result == RT_EOK)
+    // {
+    //     rt_thread_startup(&led_thread);
+    // }
 
 #if (RT_THREAD_PRIORITY_MAX == 32)
     init_thread = rt_thread_create("init",
